@@ -12,6 +12,7 @@
     <modules>
         <module>gateway</module>
         <module>feign</module>
+        <module>authentication</module>
     </modules>
 
     <properties>

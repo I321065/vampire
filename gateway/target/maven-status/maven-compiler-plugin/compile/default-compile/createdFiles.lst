@@ -1,0 +1,5 @@
+com/nick/www/gateway/IndexController.class
+com/nick/www/gateway/listener/TestListener.class
+com/nick/www/gateway/CustomerRouteLocator.class
+com/nick/www/gateway/filter/TestFilter.class
+com/nick/www/GatewayBootStrap.class
