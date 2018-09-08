@@ -2,6 +2,8 @@
 ### Java template
 # Compiled class file
 .idea/
+authentication/taget/
+authentication/authentication.iml
 feign/target/
 feign/feign.iml
 gateway/target/
