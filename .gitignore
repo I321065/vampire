@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Java template
+# Compiled class file
+.idea/
+feign/target/
+feign/feign.iml
+gateway/target/
+gateway/gateway.iml
+vampire.iml
