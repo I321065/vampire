@@ -12,7 +12,7 @@
     <modules>
         <module>gateway</module>
         <module>feign</module>
-        <module>authentication</module>
+       <!-- <module>authentication</module>-->
     </modules>
 
     <properties>
@@ -20,7 +20,8 @@
         <springcloud.version>2.0.1.RELEASE</springcloud.version>
         <dockerfile-maven-version>1.4.4</dockerfile-maven-version>
         <consul.version>2.0.0.RELEASE</consul.version>
-        <servlet.api.version>4.0.1</servlet.api.version>
+        <servlet.api.version>4.0.0</servlet.api.version>
+        <lombok.version>1.16.22</lombok.version>
     </properties>
 
     <parent>
@@ -37,18 +38,14 @@
                 <version>${consul.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
-            </dependency>
-
+            <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.api.version}</version>
                 <scope>provided</scope>
             </dependency>
+
 
             <dependency>
                 <groupId>org.projectlombok</groupId>
@@ -62,7 +59,7 @@
     <repositories>
         <repository>
             <id>maven-public</id>
-            <url>http://localhost:8081/repository/maven-public/</url>
+            <url>http://192.168.1.107:9081/repository/maven-public/</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -78,12 +75,12 @@
         <repository>
             <id>maven-public</id>
             <name>maven-releases</name>
-            <url>http://localhost:8081/repository/maven-releases/</url>
+            <url>http://192.168.1.107:9081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-public</id>
             <name>maven-snapshots</name>
-            <url>http://localhost:8081/repository/maven-snapshots/</url>
+            <url>http://192.168.1.107:9081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 

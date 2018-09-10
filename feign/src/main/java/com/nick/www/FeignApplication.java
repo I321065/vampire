@@ -10,7 +10,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @date 2018-09-01
  */
 @SpringBootApplication
-@EnableAutoConfiguration
 @EnableDiscoveryClient
 public class FeignApplication {
 

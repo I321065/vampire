@@ -3,7 +3,7 @@ server:
 spring:
   cloud:
     consul:
-      host: localhost
+      host: 192.168.1.107
       discovery:
         port: 8005
   application:
