@@ -11,8 +11,8 @@
 
     <modules>
         <module>gateway</module>
-        <module>feign</module>
-       <!-- <module>authentication</module>-->
+        <module>message</module>
+        <module>authentication</module>
     </modules>
 
     <properties>
@@ -22,6 +22,7 @@
         <consul.version>2.0.0.RELEASE</consul.version>
         <servlet.api.version>4.0.0</servlet.api.version>
         <lombok.version>1.16.22</lombok.version>
+        <feign.version>1.0.0.RELEASE</feign.version>
     </properties>
 
     <parent>
@@ -46,12 +47,16 @@
                 <scope>provided</scope>
             </dependency>
 
-
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>${feign.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -90,7 +95,37 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile-maven-version}</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <repository>192.167.1.107:9082</repository>
+                    <tag>${project.build.finalName}-${project.version}</tag>
+                    <username>admin</username>
+                    <password>admin123</password>
+                    <buildArgs>
+                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
         </plugins>
+        <!--<pluginManagement>
+            <plugins>
+                <plugin></plugin>
+            </plugins>
+        </pluginManagement>-->
+
     </build>
 
 </project>

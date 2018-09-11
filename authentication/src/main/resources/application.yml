@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: authentication
+  cloud:
+    consul:
+      host: 172.168.1.107
+      port: 8500
+
+logging:
+  level: info
